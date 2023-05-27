@@ -2,7 +2,7 @@
 This is going to be a simple modeling system for a streaming service. The system is going to focus on showing movies and series (as titles or names for now), along with their respective ratings.
 
 ## Context
-The problem situation tells us that in recent years, low-cost, on-demand streaming services like Netflix, Disney, and DC have gained immense popularity. Then it gives us the characteristics our limited support version must have in order to support a future content provider for these kinds of services. These are:
+In recent years, low-cost, on-demand streaming services like Netflix, Disney, and DC have gained immense popularity. Some characteristics our limited support version must have in order to support a future content provider for these kinds of services are:
 - Being able to manage two types of videos, movies and series.
 - Every video must have an ID, a name, a length, and genre.
 - Series must have episodes and each episode needs to have a title and a season to which it belongs to.
