@@ -5,9 +5,8 @@
 
 class Movie : public Video{
     public:
-        Movie();
-        /* The forth parameter will be a dynamic array in the future */
-        Movie(string, string, float, string, int);
+        Movie(string, string, float, string[], int);
+        void setId(string) override;
 
 };
 

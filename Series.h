@@ -3,19 +3,17 @@
 
 #include "Video.h"
 #include "Season.h"
+#include <vector>
 
 class Series : public Video{
     private:
-        // It will be a dynamic array in the future
-        Season seasons;
+        vector<Season*> seasons;
 
     public:
-        Series();
-        /* Second, third, forth and fifth parameters are going to be
-        dynamic arrays in the future */
-        void setSeason(string, string, string, float, int);
-        Season getSeason(int);
-
+        Series(string, string, float, string[], int);
+        void setId(string) override;
+        void setSeason(string, string, string[], string[], float[], int[]);
+        vector<Season*> getSeasons(int);
 
 };
 

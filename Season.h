@@ -3,21 +3,24 @@
 
 #include "Episode.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class Season{
     private:
+        string id;
         string title;
-        /* It will be a dynamic array in the future */
-        Episode episodes;
+        vector<Episode*> episodes;
     
     public:
-    Season();
-    void setTitle(string);
-    string getTitle();
-    void setEpisode(string, string, float, int);
-    Episode getEpisodes();
+        Season(string, string);
+        void setId(string);
+        string getId();
+        void setTitle(string);
+        string getTitle();
+        void setEpisode(string, string, float, int);
+        vector<Episode*> getEpisodes();
 
 };
 

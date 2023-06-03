@@ -13,10 +13,9 @@ class Episode{
         int rating;
 
     public:
-        Episode();
         Episode(string, string, float, int);
-        void setId(int);
-        int getId();
+        void setId(string);
+        string getId();
         void setName(string);
         string getName();
         void setLenght(float);

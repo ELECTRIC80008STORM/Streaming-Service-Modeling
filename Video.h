@@ -2,6 +2,8 @@
 #define VIDEO
 
 #include <string>
+#include <vector>
+
 using namespace std;
 
 class Video{
@@ -9,26 +11,20 @@ class Video{
         string id;
         string name;
         float lenght;
-        /* The "genre" attribute will be a dynamic array in the
-        future but for now it can't be correctly declare */
-        string genre;
+        vector<string*> genre;
         int rating;
 
     public:
-        Video();
         Video(string, string);
-        /* The forth parameter will be a dynamic array in the future */
-        Video(string, string, float, string, int);
-        void setId(int);
-        int getId();
+        Video(string, string, float, string[], int);
+        virtual void setId(string) = 0;
+        string getId();
         void setName(string);
         string getName();
         void setLenght(float);
         float getLenght();
-        /* Because "setGenre" and "getGenre" will need to deal with the dynamic array
-        they can't be correctly declare either */
-        void setGenre(string);
-        string getGenre();
+        void setGenre(string[]);
+        vector<string*> getGenre();
         void setRating(int);
         int getRating();
 };
