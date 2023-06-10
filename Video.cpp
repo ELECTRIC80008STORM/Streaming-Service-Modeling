@@ -5,7 +5,7 @@ Video::Video(string id, string name_){
     setName(name_);
 }
 
-Video::Video(string id, string name_, float lenght_, string genres_[], int rating_){
+Video::Video(string id, string name_, int lenght_, string genres_, int rating_){
     this->id = id;
     setName(name_);
     setLenght(lenght_);
@@ -25,7 +25,7 @@ string Video::getName(){
     return name;
 }
 
-void Video::setLenght(float lenght){
+void Video::setLenght(int lenght){
     this->lenght = lenght;
 }
 
@@ -33,14 +33,11 @@ float Video::getLenght(){
     return lenght;
 }
 
-void Video::setGenre(string genres[]){
-    int genreListLenght = sizeof(genres) / sizeof(string);
-    for(int i = 0; i < genreListLenght; i++){
-        genre.push_back(&genres[i]);
-    }
+void Video::setGenre(string genre){
+    this->genre = genre;
 }
 
-vector<string*> Video::getGenre(){
+string Video::getGenre(){
     return genre;
 }
 

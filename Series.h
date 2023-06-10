@@ -10,10 +10,10 @@ class Series : public Video{
         vector<Season*> seasons;
 
     public:
-        Series(string, string, float, string[], int);
+        Series(string, string, int, string, int);
         void setId(string) override;
-        void setSeason(string, string, string[], string[], float[], int[]);
-        vector<Season*> getSeasons(int);
+        void setSeason(string, string, vector<string*>, vector<string*>, vector<int*>, vector<int*>);
+        vector<Season*> getSeasons();
 
 };
 

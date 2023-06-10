@@ -10,21 +10,21 @@ class Video{
     protected:
         string id;
         string name;
-        float lenght;
-        vector<string*> genre;
+        int lenght;
+        string genre;
         int rating;
 
     public:
         Video(string, string);
-        Video(string, string, float, string[], int);
+        Video(string, string, int, string, int);
         virtual void setId(string) = 0;
         string getId();
         void setName(string);
         string getName();
-        void setLenght(float);
+        void setLenght(int);
         float getLenght();
-        void setGenre(string[]);
-        vector<string*> getGenre();
+        void setGenre(string);
+        string getGenre();
         void setRating(int);
         int getRating();
 };

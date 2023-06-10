@@ -1,6 +1,6 @@
 #include "Episode.h"
 
-Episode::Episode(string id, string name, float lenght, int rating){
+Episode::Episode(string id, string name, int lenght, int rating){
     setId(id);
     setName(name);
     setLenght(lenght);
@@ -23,7 +23,7 @@ string Episode::getName(){
     return name;
 }
 
-void Episode::setLenght(float lenght){
+void Episode::setLenght(int lenght){
     this->lenght = lenght;
 }
 

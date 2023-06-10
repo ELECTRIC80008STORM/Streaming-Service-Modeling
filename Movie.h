@@ -5,7 +5,7 @@
 
 class Movie : public Video{
     public:
-        Movie(string, string, float, string[], int);
+        Movie(string, string, int, string, int);
         void setId(string) override;
 
 };

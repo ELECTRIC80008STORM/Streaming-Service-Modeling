@@ -19,7 +19,7 @@ class Season{
         string getId();
         void setTitle(string);
         string getTitle();
-        void setEpisode(string, string, float, int);
+        void setEpisode(string, string, int, int);
         vector<Episode*> getEpisodes();
 
 };

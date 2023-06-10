@@ -9,16 +9,16 @@ class Episode{
     private:
         string id;
         string name;
-        float lenght;
+        int lenght;
         int rating;
 
     public:
-        Episode(string, string, float, int);
+        Episode(string, string, int, int);
         void setId(string);
         string getId();
         void setName(string);
         string getName();
-        void setLenght(float);
+        void setLenght(int);
         float getLenght();
         void setRating(int);
         int getRating();
