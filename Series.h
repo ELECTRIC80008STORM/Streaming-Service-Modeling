@@ -1,3 +1,12 @@
+/*
+* Streaming Service Modeling Proyect
+* Rommel T.
+*/
+
+/*
+* Season class, child of Video class
+*/
+
 #ifndef SERIES
 #define SERIES
 
@@ -5,6 +14,7 @@
 #include "Season.h"
 #include <vector>
 
+// Declaration of class Series
 class Series : public Video{
     private:
         vector<Season*> seasons;
@@ -14,7 +24,6 @@ class Series : public Video{
         void setId(string) override;
         void setSeason(string, string, vector<string*>, vector<string*>, vector<int*>, vector<int*>);
         vector<Season*> getSeasons();
-
 };
 
 #endif

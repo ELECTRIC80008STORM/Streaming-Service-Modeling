@@ -7,15 +7,14 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-
-// It gives me the necessary tools to cause delays
 #include <chrono>
 #include <thread>
 
 using namespace std;
-using namespace std::this_thread; // sleep_for, sleep_until
-using namespace std::chrono; // nanoseconds, system_clock, seconds
+using namespace std::this_thread;
+using namespace std::chrono;
 
+// Declaration of functions
 void userMenu(int, const vector<Video*>&);
 void adminMenu(int, const vector<Video*>&);
 int choiceValidation(int, int);
@@ -94,127 +93,59 @@ int main(){
 
     dynamic_cast<Series*> (catalog.back())->setSeason("002","The Floor is Lava",idsSeries2,namesSeries2,lengthSeries2,ratingsSeries2);
 
-
     printf("\e[1;1H\e[2J");
     cout << "StreamingWave\n\n";
-    // sleep_for(seconds(3));
-    // userMenu(0,catalog);
-    adminMenu(0,catalog);
-
-    
-    // cout << "Catalog Size: " << catalog.size();
-    // videoInfo(catalog,6,false);
+    sleep_for(seconds(3));
+    userMenu(0,catalog);
 
     return 0;
 }
 
-// Función que provee el menú para los usuarios
+/**
+ * Displays a user menu based on the given choice and performs corresponding actions.
+ * @param int choice: the user's menu choice
+ * const vector<Video*>& catalog: a reference to the video catalog
+ * @return
+*/
 void userMenu(int choice, const vector<Video*> &catalog){
     switch (choice)
     {
-    case 0: // Menu Principal Usuarios
+    case 0:
         cout << "Available actions:" << "\n1. Watch the titles that are trending now"
         << "\n2. Enter admin mode (It allows you to edit the titles inside the database)" << "\n3. Exit the app" << endl << endl;
         cout << "Select the number of the option you wish to perform: ";
         userMenu(choiceValidation(1,3),catalog);
         break;
-    case 1: // Catálogo completo sin mostrar ID, permite al usuario seleccionar que título desea ver en específico
+
+    case 1:
         printf("\e[1;1H\e[2J");
         cout << "Trending Now:" << endl << endl;
-        // sleep_for(seconds(2));
+        sleep_for(seconds(2));
+
         for(int i = 0; i < catalog.size(); i++){
             cout << (i + 1) << ". " << catalog[i]->getName() << endl;
         }
-        cout << endl;
-        // sleep_for(seconds(2));
-        int titleNo;
-        titleNo = ReadType<int>("Select the number of the title you wish to see: ");
+
         cout << endl;
 
-        // Actions
-        if(titleNo >= 1 && titleNo <= catalog.size()){
-            videoInfo(catalog, titleNo,false);
+        int titleNumber;
+        titleNumber = ReadType<int>("Select the number of the title you wish to see: ");
+        cout << endl;
+
+        if(titleNumber >= 1 && titleNumber <= catalog.size()){
+            videoInfo(catalog, titleNumber,false);
             sleep_for(seconds(2));
+            
             cout << "Available actions: \n1. Go back to the menu \n2. Exit the app" << endl << endl;
             cout << "Select the number of the option you wish to perform: ";
             int choice = choiceValidation(1,2);
+
             if(choice == 1){
                 printf("\e[1;1H\e[2J");
                 userMenu(0,catalog);    
             } else if(choice == 2){
                 userMenu(3,catalog);
             }
-        } 
-        else{
-            cout << "Remember, the number must be one of the ones that are next to the titles\n";
-            sleep_for(seconds(6));
-            printf("\e[1;1H\e[2J");
-            userMenu(1,catalog);
-        }
-        break;
-    case 2:
-        printf("\e[1;1H\e[2J");
-        sleep_for(seconds(2));
-        cout << "You have succesfully enter admin mode" << endl << endl;
-        adminMenu(0,catalog);
-        break;
-    case 3:
-        printf("\e[1;1H\e[2J");
-        cout << "You have exit the app" << endl;
-        break;
-    default:
-        break;
-    }
-}
-
-// Función que provee el menú para los administradores
-void adminMenu(int choice, const vector<Video*>& catalog){
-    switch (choice)
-    {
-    case 0: // Menu Principal Administrador
-        cout << "Available actions:" << "\n1. Watch the titles store in the system and edit them or delete them if you need to"
-        << "\n2. Add content to the database" << "\n3. Exit admin mode" << "\n4. Exit the app" << endl << endl;
-        cout << "Select the number of the option you wish to perform: ";
-        adminMenu(choiceValidation(1,4),catalog);
-        break;
-    case 1: // Catálogo completo, permite al administrador seleccionar que título desea ver en específico
-        printf("\e[1;1H\e[2J");
-        cout << "Titles:" << endl << endl;
-        // sleep_for(seconds(2));
-        for(int i = 0; i < catalog.size(); i++){
-            cout << (i + 1) << ". " << catalog[i]->getName() << endl;
-        }
-        cout << endl;
-        // sleep_for(seconds(2));
-        int titleNo;
-        titleNo = ReadType<int>("Select the number of the title you wish to edit (full info will be display): ");
-        cout << endl;
-
-        // Actions after editing
-        if(titleNo >= 1 && titleNo <= catalog.size()){
-            videoInfo(catalog, titleNo,true);
-            sleep_for(seconds(2));
-            
-            cout << "Available actions: \n1. Edit store data (ID can't be changed) \n2. Delete it from the database"
-            <<  "\n3. Go back to the main menu" << endl << endl;
-            cout << "Select the number of the option you wish to perform: ";
-            
-            int choice = choiceValidation(1,3);
-            if(choice == 1){
-                editContent(catalog,titleNo);
-            } else if(choice == 2){ // Make the options to delete content
-                cout << "We are sorry for the inconvinience, our employees are severly underpaid "
-                << "and weren't able to finish on time the option to delete content from the database. "
-                << endl << "But hang in there, the option will come in a future.\nProbably...";
-                sleep_for(seconds(6));
-                adminMenu(0,catalog);
-            } else if(choice == 3){
-                printf("\e[1;1H\e[2J");
-                adminMenu(0,catalog);    
-            } else{
-
-            }
-        
         } else{
             cout << "Remember, the number must be one of the ones that are next to the titles\n";
             sleep_for(seconds(6));
@@ -222,29 +153,120 @@ void adminMenu(int choice, const vector<Video*>& catalog){
             userMenu(1,catalog);
         }
         break;
+
     case 2:
-        cout << "We are sorry for the inconvinience, our employees are severly underpaid "
+        printf("\e[1;1H\e[2J");
+        sleep_for(seconds(2));
+
+        cout << "You have succesfully enter admin mode" << endl << endl;
+
+        adminMenu(0,catalog);
+        break;
+
+    case 3:
+        printf("\e[1;1H\e[2J");
+        cout << "You have exit the app" << endl;
+        break;
+
+    default:
+        break;
+    }
+}
+
+/**
+ * Displays an admin menu based on the given choice and performs corresponding actions.
+ * @param int choice: the admin's menu choice
+ * const vector<Video*>& catalog: a reference to the video catalog
+ * @return
+*/
+void adminMenu(int choice, const vector<Video*>& catalog){
+    switch (choice)
+    {
+    case 0:
+        cout << "Available actions:" << "\n1. Watch the titles store in the system and edit them or delete them if you need to"
+        << "\n2. Add content to the database" << "\n3. Exit admin mode" << "\n4. Exit the app" << endl << endl;
+        cout << "Select the number of the option you wish to perform: ";
+        adminMenu(choiceValidation(1,4),catalog);
+        break;
+
+    case 1:
+        printf("\e[1;1H\e[2J");
+        cout << "Titles:" << endl << endl;
+        sleep_for(seconds(2));
+
+        for(int i = 0; i < catalog.size(); i++){
+            cout << (i + 1) << ". " << catalog[i]->getName() << endl;
+        }
+
+        cout << endl;
+
+        int titleNumber;
+        titleNumber = ReadType<int>("Select the number of the title you wish to edit (full info will be display): ");
+        cout << endl;
+
+        if(titleNumber >= 1 && titleNumber <= catalog.size()){
+            videoInfo(catalog, titleNumber,true);
+            sleep_for(seconds(2));
+            
+            cout << "Available actions: \n1. Edit store data (ID can't be changed) \n2. Delete it from the database"
+            <<  "\n3. Go back to the main menu" << endl << endl;
+            cout << "Select the number of the option you wish to perform: ";
+            
+            int choice = choiceValidation(1,3);
+
+            if(choice == 1){
+                editContent(catalog,titleNumber);
+            } else if(choice == 2){
+                cout << "\nWe are sorry for the inconvinience, our employees are severly underpaid "
+                << "and weren't able to finish on time the option to delete content from the database. "
+                << endl << "But hang in there, the option will come in a future.\nProbably...";
+
+                sleep_for(seconds(6));
+                adminMenu(0,catalog);
+            } else if(choice == 3){
+                printf("\e[1;1H\e[2J");
+                adminMenu(0,catalog);    
+            }
+        } else{
+            cout << "Remember, the number must be one of the ones that are next to the titles\n";
+            sleep_for(seconds(6));
+            printf("\e[1;1H\e[2J");
+            userMenu(1,catalog);
+        }
+        break;
+
+    case 2:
+        cout << "\nWe are sorry for the inconvinience, our employees are severly underpaid "
         << "and weren't able to finish on time the option to add content to the database. "
         << endl << "But hang in there, the option will come in a future.\nProbably...";
+        
         sleep_for(seconds(6));
         adminMenu(0,catalog);
         break;
+
     case 3:
         printf("\e[1;1H\e[2J");
         sleep_for(seconds(2));
         cout << "You have succesfully exit admin mode, you're now in user mode" << endl << endl;
         userMenu(0,catalog);
         break;
+
     case 4:
         printf("\e[1;1H\e[2J");
         cout << "You have exit the app" << endl;
         break;
+
     default:
         break;
     }
 }
 
-//A function made to facilitate the process of adding content
+/**
+ * Edits the content of a video in the catalog.
+ * @param catalog The vector of Video pointers representing the catalog
+ * videoNumber The number of the video to edit
+ * @return
+*/
 void editContent(const vector<Video*>& catalog, int videoNumber){
     sleep_for(seconds(2));
     printf("\e[1;1H\e[2J");
@@ -258,6 +280,7 @@ void editContent(const vector<Video*>& catalog, int videoNumber){
         cout << "Option: ";
         choice = choiceValidation(1,4);
         cout << endl;
+
         if(choice == 1){
             string title;
             cout << "Write the title you wish to set: ";
@@ -265,26 +288,26 @@ void editContent(const vector<Video*>& catalog, int videoNumber){
             movie->setName(title);
         } else if(choice == 2){ 
             cout << "Select the number of the action you wish to do" << endl;
-            int howToAddTime;
+            int timeOption;
             
             cout << "\n1. Write the new length \n2. Add a certain amount of time"
             <<  "\n3. Reduce a certain amount of time" << endl << endl;
             
             cout << "Option: ";
-            howToAddTime = choiceValidation(1,3);
+            timeOption = choiceValidation(1,3);
             cout << endl;
 
-            if(howToAddTime == 1){
+            if(timeOption == 1){
                 int length;
                 length = ReadType<int>("Write the length you wish to set: ");
                 movie->setLength(length);
                 cout << endl;
-            } else if(howToAddTime == 2){
+            } else if(timeOption == 2){
                 int extraTime;
                 extraTime = ReadType<int>("Write the time you wish to add: ");
                 *movie + extraTime;
                 cout << endl;
-            } else if(howToAddTime == 3){
+            } else if(timeOption == 3){
                 int reducedTime;
                 reducedTime = ReadType<int>("Write the time you wish to reduce: ");
                 *movie - reducedTime;
@@ -307,6 +330,7 @@ void editContent(const vector<Video*>& catalog, int videoNumber){
         cout << "Option: ";
         choice = choiceValidation(1,2);
         cout << endl;
+
         if(choice == 1){
             cout << "Select the number of what you wish to edit on the series: " << endl;
             cout << "\n1. Title \n2. Genre \n3. Overall Rating" << endl << endl;
@@ -314,6 +338,7 @@ void editContent(const vector<Video*>& catalog, int videoNumber){
             int seriesEdition;
             seriesEdition = choiceValidation(1,3);
             cout << endl;
+
             if(seriesEdition == 1){
                 string title;
                 cout << "Write the title you wish to set for the series: ";
@@ -330,10 +355,11 @@ void editContent(const vector<Video*>& catalog, int videoNumber){
                 series->setRating(rating);
             }
             adminMenu(0,catalog);
-        } else if (choice == 2){ // Write the code to edit the seasons and episodes
+        } else if (choice == 2){
 
             cout << "Select the number of the season you wish to edit" << endl;
-            for(int i = 0; i < series->getSeasons().size(); i++){ // Iterate through the seasons
+
+            for(int i = 0; i < series->getSeasons().size(); i++){
                 Season* season = series->getSeasons().at(i);
                 cout << (i + 1) << ". " << season->getTitle() << endl;
             }
@@ -363,8 +389,8 @@ void editContent(const vector<Video*>& catalog, int videoNumber){
                 cout << "Select the number of the episode you wish to edit" << endl << endl;
 
                 cout << "Episodes:" << endl;
-                for(int j = 0; j < season->getEpisodes().size(); j++){ // Bucle for para obtener los episodios como punteros
-                    Episode* episode = season->getEpisodes().at(j); // Saco los episodios del vector en la temporada
+                for(int j = 0; j < season->getEpisodes().size(); j++){
+                    Episode* episode = season->getEpisodes().at(j);
                     cout << (j + 1) << ". " << episode->getName() << endl;
                     cout << "Episode ID: " << episode->getId() << endl;
                     cout << "Length: " << episode->getLength() << " minutes" << endl;
@@ -392,26 +418,26 @@ void editContent(const vector<Video*>& catalog, int videoNumber){
                     episode->setName(title);
                 } else if(episodeEdition == 2){
                     cout << "Select the number of the action you wish to do" << endl;
-                    int howToAddTime;
+                    int timeOption;
                     
                     cout << "\n1. Write the new length \n2. Add a certain amount of time"
                     <<  "\n3. Reduce a certain amount of time" << endl << endl;
                     
                     cout << "Option: ";
-                    howToAddTime = choiceValidation(1,3);
+                    timeOption = choiceValidation(1,3);
                     cout << endl;
 
-                    if(howToAddTime == 1){
+                    if(timeOption == 1){
                         int length;
                         length = ReadType<int>("Write the length you wish to set: ");
                         movie->setLength(length);
                         cout << endl;
-                    } else if(howToAddTime == 2){
+                    } else if(timeOption == 2){
                         int extraTime;
                         extraTime = ReadType<int>("Write the time you wish to add: ");
                         *episode + extraTime;
                         cout << endl;
-                    } else if(howToAddTime == 3){
+                    } else if(timeOption == 3){
                         int reducedTime;
                         reducedTime = ReadType<int>("Write the time you wish to reduce: ");
                         *episode - reducedTime;
@@ -433,30 +459,42 @@ void editContent(const vector<Video*>& catalog, int videoNumber){
 
 }
 
-// A function to validate and return the choice made by the user
+/**
+ * Validates the user's choice within a specified range.
+ * @param lowerLimit The lower limit of the valid range
+ * upperLimit The upper limit of the valid range
+ * @return The validated choice within the specified range
+*/
 int choiceValidation(int lowerLimit, int upperLimit){
     int choice;
     choice = ReadType<int>("");
+
     while(choice < lowerLimit || choice > upperLimit){
         cout << "\nEnter a valid number for the action you wish to perform: ";
         choice = ReadType<int>("");;
     }
+
     return choice;
 }
 
-// Función para facilitar el mostrar todo el contenido de las películas y vídeos
+/**
+ * Displays information about a video.
+ * @param catalog The vector of Video pointers representing the catalog
+ * videoNumber The index of the video to display information for
+ * admin Indicates whether the user is an admin or not
+ * @return
+*/
 void videoInfo(const vector<Video*> &catalog, int videoNumber, bool admin){
     
-    // sleep_for(seconds(2));
+    sleep_for(seconds(2));
     cout << catalog[videoNumber - 1]->getName() << endl;
 
     if(admin == true){
         cout << "ID: " << catalog[videoNumber - 1]->getId() << endl;
     }
 
-    Series* series = dynamic_cast<Series*> (catalog[videoNumber - 1]); // Dynamic casting para convertir el puntero vídeo a serie
+    Series* series = dynamic_cast<Series*> (catalog[videoNumber - 1]);
     
-    // Condicional para permitir mostrar de manera distinta la duración dependiendo de sí es una película o serie
     if(Movie* movie = dynamic_cast<Movie*> (catalog[videoNumber - 1])){
         cout << "Length: " << movie->getLength() << " minutes" << endl;
     } else if(series != nullptr){
@@ -466,15 +504,14 @@ void videoInfo(const vector<Video*> &catalog, int videoNumber, bool admin){
             cout << "Number of seasons: " << series->getSeasons().size() << " seasons" << endl;
         }
         
-    } else{cout << "Unknown Type" << endl;} // TO DO: Turn in to an error warning
+    } else{cout << "Unknown Type" << endl;}
 
     cout << "Genre: " << catalog[videoNumber - 1]->getGenre() << endl;
     cout << "Rating: " << catalog[videoNumber - 1]->getRating() << " stars" << endl << endl;
 
-    // Condicional para iterar los atributos de la serie y poder mostrar las temporadas y episodios
     if(series != nullptr){
-        for(int i = 0; i < series->getSeasons().size(); i++){ //  Bucle for para obtener las temporadas como punteros
-            Season* season = series->getSeasons().at(i); // Saco las temporadas del vector en la serie
+        for(int i = 0; i < series->getSeasons().size(); i++){
+            Season* season = series->getSeasons().at(i); 
             cout << "Season " << (i + 1) << ": " << season->getTitle() << endl;
             
             if(admin == true){
@@ -482,8 +519,8 @@ void videoInfo(const vector<Video*> &catalog, int videoNumber, bool admin){
             }
 
             cout << "Episodes:" << endl;
-            for(int j = 0; j < season->getEpisodes().size(); j++){ // Bucle for para obtener los episodios como punteros
-                Episode* episode = season->getEpisodes().at(j); // Saco los episodios del vector en la temporada
+            for(int j = 0; j < season->getEpisodes().size(); j++){
+                Episode* episode = season->getEpisodes().at(j);
                 cout << (j + 1) << ". " << episode->getName() << endl;
                 
                 if(admin == true){

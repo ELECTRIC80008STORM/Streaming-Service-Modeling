@@ -1,3 +1,12 @@
+/*
+* Streaming Service Modeling Proyect
+* Rommel T.
+*/
+
+/*
+* Abstract class Video, it’s the parent class of Movie and Series
+*/
+
 #ifndef VIDEO
 #define VIDEO
 
@@ -6,6 +15,7 @@
 
 using namespace std;
 
+// Declaration of class Video
 class Video{
     protected:
         string id;

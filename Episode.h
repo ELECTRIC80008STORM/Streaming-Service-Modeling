@@ -1,3 +1,12 @@
+/*
+* Streaming Service Modeling Proyect
+* Rommel T.
+*/
+
+/*
+* Definition of Episode class
+*/
+
 #ifndef EPISODE
 #define EPISODE
 
@@ -5,6 +14,7 @@
 
 using namespace std;
 
+// Declaration of class Episode
 class Episode{
     private:
         string id;
