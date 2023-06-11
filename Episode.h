@@ -9,7 +9,7 @@ class Episode{
     private:
         string id;
         string name;
-        int lenght;
+        int length;
         int rating;
 
     public:
@@ -18,10 +18,12 @@ class Episode{
         string getId();
         void setName(string);
         string getName();
-        void setLenght(int);
-        float getLenght();
+        void setLength(int);
+        float getLength();
         void setRating(int);
         int getRating();
+        void operator+(int);
+        void operator-(int);
 };
 
 #endif

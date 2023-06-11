@@ -21,8 +21,8 @@ string Season::getTitle(){
     return title;
 }
 
-void Season::setEpisode(string id, string name, int lenght, int rating){
-    episodes.push_back(new Episode(id,name,lenght,rating));
+void Season::setEpisode(string id, string name, int length, int rating){
+    episodes.push_back(new Episode(id,name,length,rating));
 }
 
 vector<Episode*> Season::getEpisodes(){

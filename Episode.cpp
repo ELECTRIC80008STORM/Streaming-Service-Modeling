@@ -1,9 +1,9 @@
 #include "Episode.h"
 
-Episode::Episode(string id, string name, int lenght, int rating){
+Episode::Episode(string id, string name, int length, int rating){
     setId(id);
     setName(name);
-    setLenght(lenght);
+    setLength(length);
     setRating(rating);
 }
 
@@ -23,12 +23,12 @@ string Episode::getName(){
     return name;
 }
 
-void Episode::setLenght(int lenght){
-    this->lenght = lenght;
+void Episode::setLength(int length){
+    this->length = length;
 }
 
-float Episode::getLenght(){
-    return lenght;
+float Episode::getLength(){
+    return length;
 }
 
 void Episode::setRating(int rating){
@@ -37,4 +37,14 @@ void Episode::setRating(int rating){
 
 int Episode::getRating(){
     return rating;
+}
+
+void Episode::operator+(int timeToAdd){
+    this->length += timeToAdd;
+}
+
+void Episode::operator-(int timeToReduce){
+    if((this->length - timeToReduce) > 0){
+        this->length -= timeToReduce;
+    }
 }

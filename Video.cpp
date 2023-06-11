@@ -5,10 +5,10 @@ Video::Video(string id, string name_){
     setName(name_);
 }
 
-Video::Video(string id, string name_, int lenght_, string genres_, int rating_){
+Video::Video(string id, string name_, int length_, string genres_, int rating_){
     this->id = id;
     setName(name_);
-    setLenght(lenght_);
+    setLength(length_);
     setGenre(genres_);
     setRating(rating_);
 }
@@ -25,12 +25,12 @@ string Video::getName(){
     return name;
 }
 
-void Video::setLenght(int lenght){
-    this->lenght = lenght;
+void Video::setLength(int length){
+    this->length = length;
 }
 
-float Video::getLenght(){
-    return lenght;
+float Video::getLength(){
+    return length;
 }
 
 void Video::setGenre(string genre){
