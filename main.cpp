@@ -37,61 +37,307 @@ int main(){
     catalog.push_back(new Movie("004", "Fast X", 141, "Action, Spies, Heists",3));
 
     // Series
-    catalog.push_back(new Series("007","Adventures of James Bond's Child",69,"Action, Spies, For Kids", 7));
+    catalog.push_back(new Series("005","Demon Slayer: Kimetsu no Yaiba",3,"Anime, Adventure, Dark Fantasy, Martial Arts", 5));
 
-    vector<string*> idsSeries1;
-    idsSeries1.push_back(new string ("002"));
-    idsSeries1.push_back(new string ("003"));
-    idsSeries1.push_back(new string ("004"));
-    idsSeries1.push_back(new string ("005"));
+    vector<string*> idsSeason1DemonSlayer;
+    idsSeason1DemonSlayer.push_back(new string ("000"));
+    idsSeason1DemonSlayer.push_back(new string ("001"));
+    idsSeason1DemonSlayer.push_back(new string ("002"));
+    idsSeason1DemonSlayer.push_back(new string ("003"));
+    idsSeason1DemonSlayer.push_back(new string ("004"));
+    idsSeason1DemonSlayer.push_back(new string ("005"));
+    idsSeason1DemonSlayer.push_back(new string ("006"));
+    idsSeason1DemonSlayer.push_back(new string ("007"));
+    idsSeason1DemonSlayer.push_back(new string ("008"));
+    idsSeason1DemonSlayer.push_back(new string ("009"));
+    idsSeason1DemonSlayer.push_back(new string ("010"));
+    idsSeason1DemonSlayer.push_back(new string ("011"));
+    idsSeason1DemonSlayer.push_back(new string ("012"));
+    idsSeason1DemonSlayer.push_back(new string ("013"));
+    idsSeason1DemonSlayer.push_back(new string ("014"));
+    idsSeason1DemonSlayer.push_back(new string ("015"));
+    idsSeason1DemonSlayer.push_back(new string ("016"));
+    idsSeason1DemonSlayer.push_back(new string ("017"));
+    idsSeason1DemonSlayer.push_back(new string ("018"));
+    idsSeason1DemonSlayer.push_back(new string ("019"));
+    idsSeason1DemonSlayer.push_back(new string ("020"));
+    idsSeason1DemonSlayer.push_back(new string ("021"));
+    idsSeason1DemonSlayer.push_back(new string ("022"));
+    idsSeason1DemonSlayer.push_back(new string ("023"));
+    idsSeason1DemonSlayer.push_back(new string ("024"));
+    idsSeason1DemonSlayer.push_back(new string ("025"));
 
-    vector<string*> namesSeries1;
-    namesSeries1.push_back(new string ("P1"));
-    namesSeries1.push_back(new string ("After the Martinni"));
-    namesSeries1.push_back(new string ("When I was young"));
-    namesSeries1.push_back(new string ("When I was young 2"));
+    vector<string*> namesSeason1DemonSlayer;
+    namesSeason1DemonSlayer.push_back(new string ("Cruelty"));
+    namesSeason1DemonSlayer.push_back(new string ("Trainer Sakonji Urokodaki"));
+    namesSeason1DemonSlayer.push_back(new string ("Sabito and Makomo"));
+    namesSeason1DemonSlayer.push_back(new string ("Final Selection"));
+    namesSeason1DemonSlayer.push_back(new string ("My Own Steel"));
+    namesSeason1DemonSlayer.push_back(new string ("Swordsman Accompanying a Demon"));
+    namesSeason1DemonSlayer.push_back(new string ("Muzan Kibutsuji"));
+    namesSeason1DemonSlayer.push_back(new string ("The Smell of Enchanting Blood"));
+    namesSeason1DemonSlayer.push_back(new string ("Temari Demon and Arrow Demon"));
+    namesSeason1DemonSlayer.push_back(new string ("Together Forever"));
+    namesSeason1DemonSlayer.push_back(new string ("Tsuzumi Mansion"));
+    namesSeason1DemonSlayer.push_back(new string ("The Boar Bares Its Fangs, Zenitsu Sleeps"));
+    namesSeason1DemonSlayer.push_back(new string ("Something More Important Than Life"));
+    namesSeason1DemonSlayer.push_back(new string ("The House with the Wisteria Family Crest"));
+    namesSeason1DemonSlayer.push_back(new string ("Mount Natagumo"));
+    namesSeason1DemonSlayer.push_back(new string ("Letting Someone Else Go First"));
+    namesSeason1DemonSlayer.push_back(new string ("You Must Master a Single Thing"));
+    namesSeason1DemonSlayer.push_back(new string ("A Forged Bond"));
+    namesSeason1DemonSlayer.push_back(new string ("Hinokami"));
+    namesSeason1DemonSlayer.push_back(new string ("Pretend Family"));
+    namesSeason1DemonSlayer.push_back(new string ("Against Corps Rules"));
+    namesSeason1DemonSlayer.push_back(new string ("Master of the Mansion"));
+    namesSeason1DemonSlayer.push_back(new string ("Hashira Meeting"));
+    namesSeason1DemonSlayer.push_back(new string ("Rehabilitation Training"));
+    namesSeason1DemonSlayer.push_back(new string ("Tsuguko, Kanao Tsuyuri"));
+    namesSeason1DemonSlayer.push_back(new string ("New Mission"));
 
-    vector<int*> lengthSeries1;
-    lengthSeries1.push_back(new int (23));
-    lengthSeries1.push_back(new int (23));
-    lengthSeries1.push_back(new int (24));
-    lengthSeries1.push_back(new int (26));
 
-    vector<int*> ratingsSeries1;
-    ratingsSeries1.push_back(new int (5));
-    ratingsSeries1.push_back(new int (5));
-    ratingsSeries1.push_back(new int (2));
-    ratingsSeries1.push_back(new int (3));
+    vector<int*> lengthSeason1DemonSlayer;
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (23));
+    lengthSeason1DemonSlayer.push_back(new int (24));
+
+    vector<int*> ratingsSeason1DemonSlayer;
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
+    ratingsSeason1DemonSlayer.push_back(new int (5));
 
 
-    dynamic_cast<Series*> (catalog.back())->setSeason("001","The Pool",idsSeries1,namesSeries1,lengthSeries1,ratingsSeries1);
+    dynamic_cast<Series*> (catalog.back())->setSeason("001","Kimetsu no Yaiba",idsSeason1DemonSlayer,namesSeason1DemonSlayer,lengthSeason1DemonSlayer,ratingsSeason1DemonSlayer);
 
 
-    vector<string*> idsSeries2;
-    idsSeries2.push_back(new string ("008"));
-    idsSeries2.push_back(new string ("009"));
-    idsSeries2.push_back(new string ("012"));
-    idsSeries2.push_back(new string ("013"));
+    vector<string*> idsSeason2DemonSlayer;
+    idsSeason2DemonSlayer.push_back(new string ("000"));
+    idsSeason2DemonSlayer.push_back(new string ("001"));
+    idsSeason2DemonSlayer.push_back(new string ("002"));
+    idsSeason2DemonSlayer.push_back(new string ("003"));
+    idsSeason2DemonSlayer.push_back(new string ("004"));
+    idsSeason2DemonSlayer.push_back(new string ("005"));
+    idsSeason2DemonSlayer.push_back(new string ("006"));
 
-    vector<string*> namesSeries2;
-    namesSeries2.push_back(new string ("PITU2"));
-    namesSeries2.push_back(new string ("After the Caguama"));
-    namesSeries2.push_back(new string ("When I wasn't old"));
-    namesSeries2.push_back(new string ("When I wasn't old, the return of the young one"));
+    vector<string*> namesSeason2DemonSlayer;
+    namesSeason2DemonSlayer.push_back(new string ("Flame Hashira Kyojuro Rengoku"));
+    namesSeason2DemonSlayer.push_back(new string ("Deep Sleep"));
+    namesSeason2DemonSlayer.push_back(new string ("Should Have Been"));
+    namesSeason2DemonSlayer.push_back(new string ("Insult"));
+    namesSeason2DemonSlayer.push_back(new string ("Move Forward!"));
+    namesSeason2DemonSlayer.push_back(new string ("Akaza"));
+    namesSeason2DemonSlayer.push_back(new string ("Set Your Heart Ablaze"));
 
-    vector<int*> lengthSeries2;
-    lengthSeries2.push_back(new int (24));
-    lengthSeries2.push_back(new int (23));
-    lengthSeries2.push_back(new int (23));
-    lengthSeries2.push_back(new int (23));
+    vector<int*> lengthSeason2DemonSlayer;
+    lengthSeason2DemonSlayer.push_back(new int (26));
+    lengthSeason2DemonSlayer.push_back(new int (22));
+    lengthSeason2DemonSlayer.push_back(new int (25));
+    lengthSeason2DemonSlayer.push_back(new int (23));
+    lengthSeason2DemonSlayer.push_back(new int (21));
+    lengthSeason2DemonSlayer.push_back(new int (23));
+    lengthSeason2DemonSlayer.push_back(new int (26));
 
-    vector<int*> ratingsSeries2;
-    ratingsSeries2.push_back(new int (3));
-    ratingsSeries2.push_back(new int (2));
-    ratingsSeries2.push_back(new int (4));
-    ratingsSeries2.push_back(new int (5));
+    vector<int*> ratingsSeason2DemonSlayer;
+    ratingsSeason2DemonSlayer.push_back(new int (5));
+    ratingsSeason2DemonSlayer.push_back(new int (5));
+    ratingsSeason2DemonSlayer.push_back(new int (5));
+    ratingsSeason2DemonSlayer.push_back(new int (5));
+    ratingsSeason2DemonSlayer.push_back(new int (5));
+    ratingsSeason2DemonSlayer.push_back(new int (5));
+    ratingsSeason2DemonSlayer.push_back(new int (5));
 
-    dynamic_cast<Series*> (catalog.back())->setSeason("002","The Floor is Lava",idsSeries2,namesSeries2,lengthSeries2,ratingsSeries2);
+    dynamic_cast<Series*> (catalog.back())->setSeason("002","Mugen Train Arc",idsSeason2DemonSlayer,namesSeason2DemonSlayer,lengthSeason2DemonSlayer,ratingsSeason2DemonSlayer);
+
+
+    vector<string*> idsSeason3DemonSlayer;
+    idsSeason3DemonSlayer.push_back(new string ("000"));
+    idsSeason3DemonSlayer.push_back(new string ("001"));
+    idsSeason3DemonSlayer.push_back(new string ("002"));
+    idsSeason3DemonSlayer.push_back(new string ("003"));
+    idsSeason3DemonSlayer.push_back(new string ("004"));
+    idsSeason3DemonSlayer.push_back(new string ("005"));
+    idsSeason3DemonSlayer.push_back(new string ("006"));
+    idsSeason1DemonSlayer.push_back(new string ("007"));
+    idsSeason1DemonSlayer.push_back(new string ("008"));
+    idsSeason1DemonSlayer.push_back(new string ("009"));
+    idsSeason1DemonSlayer.push_back(new string ("010"));
+
+    vector<string*> namesSeason3DemonSlayer;
+    namesSeason3DemonSlayer.push_back(new string ("Sound Hashira Tengen Uzui"));
+    namesSeason3DemonSlayer.push_back(new string ("Infiltrating the Entertainment District"));
+    namesSeason3DemonSlayer.push_back(new string ("What Are You?"));
+    namesSeason3DemonSlayer.push_back(new string ("Tonight"));
+    namesSeason3DemonSlayer.push_back(new string ("Things Are Gonna Get Real Flashy!!"));
+    namesSeason3DemonSlayer.push_back(new string ("Layered Memories"));
+    namesSeason3DemonSlayer.push_back(new string ("Transformation"));
+    namesSeason3DemonSlayer.push_back(new string ("Gathering"));
+    namesSeason3DemonSlayer.push_back(new string ("Defeating an Upper Rank Demon"));
+    namesSeason3DemonSlayer.push_back(new string ("Never Give Up"));
+    namesSeason3DemonSlayer.push_back(new string ("No Matter How Many Lives"));
+
+    vector<int*> lengthSeason3DemonSlayer;
+    lengthSeason3DemonSlayer.push_back(new int (47));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (24));
+    lengthSeason3DemonSlayer.push_back(new int (32));
+
+    vector<int*> ratingsSeason3DemonSlayer;
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+    ratingsSeason3DemonSlayer.push_back(new int (5));
+
+    dynamic_cast<Series*> (catalog.back())->setSeason("003","Entertainment District Arc",idsSeason3DemonSlayer,namesSeason3DemonSlayer,lengthSeason3DemonSlayer,ratingsSeason3DemonSlayer);
+
+    
+    catalog.push_back(new Series("006","The Witcher",2,"Tv Drama, TV Shows Based on Books, TV Action & Adventure", 4));
+
+
+    vector<string*> idsSeason1TheWitcher;
+    idsSeason1TheWitcher.push_back(new string ("000"));
+    idsSeason1TheWitcher.push_back(new string ("001"));
+    idsSeason1TheWitcher.push_back(new string ("002"));
+    idsSeason1TheWitcher.push_back(new string ("003"));
+    idsSeason1TheWitcher.push_back(new string ("004"));
+    idsSeason1TheWitcher.push_back(new string ("005"));
+    idsSeason1TheWitcher.push_back(new string ("006"));
+    idsSeason1TheWitcher.push_back(new string ("007"));
+
+    vector<string*> namesSeason1TheWitcher;
+    namesSeason1TheWitcher.push_back(new string ("The End's Beginning"));
+    namesSeason1TheWitcher.push_back(new string ("Four Marks"));
+    namesSeason1TheWitcher.push_back(new string ("Betrayer Moon"));
+    namesSeason1TheWitcher.push_back(new string ("Of Banquets, Bastards and Burials"));
+    namesSeason1TheWitcher.push_back(new string ("Bottled Appetites"));
+    namesSeason1TheWitcher.push_back(new string ("Rare Species"));
+    namesSeason1TheWitcher.push_back(new string ("Before a Fall"));
+    namesSeason1TheWitcher.push_back(new string ("Much More"));
+
+    vector<int*> lengthSeason1TheWitcher;
+    lengthSeason1TheWitcher.push_back(new int (61));
+    lengthSeason1TheWitcher.push_back(new int (61));
+    lengthSeason1TheWitcher.push_back(new int (67));
+    lengthSeason1TheWitcher.push_back(new int (62));
+    lengthSeason1TheWitcher.push_back(new int (59));
+    lengthSeason1TheWitcher.push_back(new int (60));
+    lengthSeason1TheWitcher.push_back(new int (48));
+    lengthSeason1TheWitcher.push_back(new int (60));
+
+    vector<int*> ratingsSeason1TheWitcher;
+    ratingsSeason1TheWitcher.push_back(new int (4));
+    ratingsSeason1TheWitcher.push_back(new int (3));
+    ratingsSeason1TheWitcher.push_back(new int (4));
+    ratingsSeason1TheWitcher.push_back(new int (4));
+    ratingsSeason1TheWitcher.push_back(new int (4));
+    ratingsSeason1TheWitcher.push_back(new int (4));
+    ratingsSeason1TheWitcher.push_back(new int (4));
+    ratingsSeason1TheWitcher.push_back(new int (4));
+
+    dynamic_cast<Series*> (catalog.back())->setSeason("001","Season 1",idsSeason1TheWitcher,namesSeason1TheWitcher,lengthSeason1TheWitcher,ratingsSeason1TheWitcher);
+
+
+    vector<string*> idsSeason2TheWitcher;
+    idsSeason2TheWitcher.push_back(new string ("000"));
+    idsSeason2TheWitcher.push_back(new string ("001"));
+    idsSeason2TheWitcher.push_back(new string ("002"));
+    idsSeason2TheWitcher.push_back(new string ("003"));
+    idsSeason2TheWitcher.push_back(new string ("004"));
+    idsSeason2TheWitcher.push_back(new string ("005"));
+    idsSeason2TheWitcher.push_back(new string ("006"));
+    idsSeason2TheWitcher.push_back(new string ("007"));
+
+    vector<string*> namesSeason2TheWitcher;
+    namesSeason2TheWitcher.push_back(new string ("A Grain of Truth"));
+    namesSeason2TheWitcher.push_back(new string ("Kaer Morhen"));
+    namesSeason2TheWitcher.push_back(new string ("What Is Lost"));
+    namesSeason2TheWitcher.push_back(new string ("Redanian Intelligence"));
+    namesSeason2TheWitcher.push_back(new string ("Turn Your Back"));
+    namesSeason2TheWitcher.push_back(new string ("Dear Friend"));
+    namesSeason2TheWitcher.push_back(new string ("Voleth Meir"));
+    namesSeason2TheWitcher.push_back(new string ("Family"));
+
+    vector<int*> lengthSeason2TheWitcher;
+    lengthSeason2TheWitcher.push_back(new int (63));
+    lengthSeason2TheWitcher.push_back(new int (58));
+    lengthSeason2TheWitcher.push_back(new int (59));
+    lengthSeason2TheWitcher.push_back(new int (55));
+    lengthSeason2TheWitcher.push_back(new int (56));
+    lengthSeason2TheWitcher.push_back(new int (57));
+    lengthSeason2TheWitcher.push_back(new int (54));
+    lengthSeason2TheWitcher.push_back(new int (52));
+
+    vector<int*> ratingsSeason2TheWitcher;
+    ratingsSeason2TheWitcher.push_back(new int (4));
+    ratingsSeason2TheWitcher.push_back(new int (3));
+    ratingsSeason2TheWitcher.push_back(new int (3));
+    ratingsSeason2TheWitcher.push_back(new int (3));
+    ratingsSeason2TheWitcher.push_back(new int (4));
+    ratingsSeason2TheWitcher.push_back(new int (4));
+    ratingsSeason2TheWitcher.push_back(new int (4));
+    ratingsSeason2TheWitcher.push_back(new int (4));
+
+    dynamic_cast<Series*> (catalog.back())->setSeason("002","Season 2",idsSeason2TheWitcher,namesSeason2TheWitcher,lengthSeason2TheWitcher,ratingsSeason2TheWitcher);
+
 
     printf("\e[1;1H\e[2J");
     cout << "StreamingWave\n\n";
